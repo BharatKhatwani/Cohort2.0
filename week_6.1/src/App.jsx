@@ -1,39 +1,39 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 
-function App() {
-  const [todos, setTodos] = useState([]);
+// function App() {
+//   const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("https://sum-server.100xdevs.com/todos")
-        .then(async (res) => {
-          const json = await res.json();
-          setTodos(json.todos);
-        });
-    }, 10000);
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       fetch("https://sum-server.100xdevs.com/todos")
+//         .then(async (res) => {
+//           const json = await res.json();
+//           setTodos(json.todos);
+//         });
+//     }, 10000);
 
    
-  }, []);
+//   }, []);
 
-  return (
-    <div>
-      {todos.map(todo => (
-        <Todo key={todo.id} title={todo.title} description={todo.description} />
-      ))}
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       {todos.map(todo => (
+//         <Todo key={todo.id} title={todo.title} description={todo.description} />
+//       ))}
+//     </div>
+//   );
+// }
 
-function Todo ({ title, description }) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-    </div>
-  );
-}
+// function Todo ({ title, description }) {
+//   return (
+//     <div>
+//       <h1>{title}</h1>
+//       <p>{description}</p>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
 
 
@@ -112,38 +112,26 @@ export default App;
 
 
 
+function App(){
+  return <div>
+  <CardWrapper innerComponent = {TextComponents}></CardWrapper>
+  </div>
+}
 
+function TextComponents(){
+  return <div>
+  hi there
+  </div>
+}
 
-
-
-
-
-
-
-
-
-// function App(){
-//   return <div>
-//   <CardWrapper innerComponent = {TextComponents}></CardWrapper>
-//   </div>
-// }
-
-// function TextComponents(){
-//   return <div>
-//   hi there
-//   </div>
-// }
-
-// function CardWrapper({}){
-// return(
-//   <div style={{border : "2px solid black"}}>
-//    {innerComponent}
-//   </div>
-// )
-// }
-// export default App
-
-
+function CardWrapper({}){
+return(
+  <div style={{border : "2px solid black"}}>
+   {innerComponent}
+  </div>
+)
+}
+export default App
 
 
 
