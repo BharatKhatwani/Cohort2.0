@@ -17,8 +17,10 @@ function App() {
 }
 
 function Count() {
+  console.log("Count Re- render ")
   return (
     <div>
+     
       <CountRender /> {/* No need to pass count and setCount as props */}
       <Buttons /> {/* No need to pass count and setCount as props */}
     </div>
