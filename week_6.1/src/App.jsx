@@ -1,5 +1,7 @@
 // import React, { useEffect, useState } from 'react';
 
+import { useState } from "react";
+
 // function App() {
 //   const [todos, setTodos] = useState([]);
 
@@ -112,26 +114,26 @@
 
 
 
-function App(){
-  return <div>
-  <CardWrapper innerComponent = {TextComponents}></CardWrapper>
-  </div>
-}
+// function App(){
+//   return <div>
+//   <CardWrapper innerComponent = {TextComponents}></CardWrapper>
+//   </div>
+// }
 
-function TextComponents(){
-  return <div>
-  hi there
-  </div>
-}
+// function TextComponents(){
+//   return <div>
+//   hi there
+//   </div>
+// }
 
-function CardWrapper({}){
-return(
-  <div style={{border : "2px solid black"}}>
-   {innerComponent}
-  </div>
-)
-}
-export default App
+// function CardWrapper({}){
+// return(
+//   <div style={{border : "2px solid black"}}>
+//    {innerComponent}
+//   </div>
+// )
+// }
+// export default App
 
 
 
@@ -272,3 +274,37 @@ export default App
 //   //     </Fragment>
 //   //   );
 //   // }
+
+function App(){
+  const[firsttitle,setFirsttitle] = useState("my name is harkirat")
+  function updateTitle (){
+    setFirsttitle(" the answer is " + Math.random())
+  }
+
+return(
+  <div>
+<button onClick={updateTitle}>Click me to change the title</button>
+<Header title ={firsttitle}/>
+<Header title= "MY NAME IS BHARAT"/>
+  </div>
+)
+
+}
+
+
+function Header({title}){
+  return(
+    <div>
+      {title}
+    </div>
+  )
+}
+
+
+export default App
+
+
+
+
+
+
