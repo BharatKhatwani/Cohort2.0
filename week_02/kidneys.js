@@ -37,7 +37,7 @@ app.get("/", function(req, res) {
 
 app.put("/",(req,res)=>{
     const ishelthy = req.body.ishelthy;
-    user[0].kidneys.push({
+    user[0].kidneys.push({uuuu
        healthy:ishelthy
     })
     res.json({
